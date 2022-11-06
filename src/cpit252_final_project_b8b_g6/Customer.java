@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package cpit251project;
+package cpit252_final_project_b8b_g6;
 
 public class Customer {
     
