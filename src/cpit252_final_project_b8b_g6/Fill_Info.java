@@ -36,7 +36,6 @@ public class Fill_Info extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         devicetype = new javax.swing.JTextField();
         name = new javax.swing.JTextField();
@@ -44,7 +43,6 @@ public class Fill_Info extends javax.swing.JFrame {
         next = new javax.swing.JButton();
         jCheckBox1 = new javax.swing.JCheckBox();
         jCheckBox2 = new javax.swing.JCheckBox();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -87,14 +85,10 @@ public class Fill_Info extends javax.swing.JFrame {
         jLabel4.setText("Gender");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, -1, -1));
 
-        jLabel5.setFont(new java.awt.Font("Franklin Gothic Book", 1, 24)); // NOI18N
-        jLabel5.setText("Birthday");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, -1, -1));
-
         jLabel6.setFont(new java.awt.Font("Franklin Gothic Book", 1, 24)); // NOI18N
         jLabel6.setText("Device type");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, -1, -1));
-        jPanel1.add(devicetype, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 310, 150, 30));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, -1, -1));
+        jPanel1.add(devicetype, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 290, 150, 30));
         jPanel1.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 150, 30));
         jPanel1.add(mobilenumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 160, 150, 30));
 
@@ -105,7 +99,7 @@ public class Fill_Info extends javax.swing.JFrame {
                 nextActionPerformed(evt);
             }
         });
-        jPanel1.add(next, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 370, 90, 40));
+        jPanel1.add(next, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 360, 90, 40));
 
         buttonGroup2.add(jCheckBox1);
         jCheckBox1.setText("Male");
@@ -114,7 +108,6 @@ public class Fill_Info extends javax.swing.JFrame {
         buttonGroup2.add(jCheckBox2);
         jCheckBox2.setText("Female");
         jPanel1.add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 220, -1, -1));
-        jPanel1.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 260, 170, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -134,17 +127,23 @@ public class Fill_Info extends javax.swing.JFrame {
         String Username = name.getText().toString();
         String mobile = mobilenumber.getText().toString();
         String device = devicetype.getText().toString();
-        if (Username.equals("")) {
-            JOptionPane.showMessageDialog(null, "User name is Mandatory");
-        }
-        if (mobile.equals("")) {
-            JOptionPane.showMessageDialog(null, "Mobile Number is Mandatory");
-        }
-        if (device.equals("")) {
-            JOptionPane.showMessageDialog(null, "Device Type is Mandatory");
-        }
-        
-        
+//        while (Username.isEmpty() && mobile.isEmpty() && device.isEmpty()) {
+//            if (Username.equals("")) {
+//                JOptionPane.showMessageDialog(null, "User name is Mandatory");
+//
+//            }
+//            if (mobile.equals("")) {
+//                JOptionPane.showMessageDialog(null, "Mobile Number is Mandatory");
+//
+//            }
+//            if (device.equals("")) {
+//                JOptionPane.showMessageDialog(null, "Device Type is Mandatory");
+//
+//            }
+//        }
+        PlaceOrder p = new PlaceOrder();
+        p.show();
+
 
     }//GEN-LAST:event_nextActionPerformed
 
@@ -189,12 +188,10 @@ public class Fill_Info extends javax.swing.JFrame {
     public javax.swing.JTextField devicetype;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     public javax.swing.JLabel jLabel2;
     public javax.swing.JLabel jLabel3;
     public javax.swing.JLabel jLabel4;
-    public javax.swing.JLabel jLabel5;
     public javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
