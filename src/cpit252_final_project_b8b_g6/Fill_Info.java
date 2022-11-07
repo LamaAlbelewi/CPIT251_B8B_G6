@@ -19,6 +19,7 @@ public class Fill_Info extends javax.swing.JFrame {
     public Fill_Info() {
         initComponents();
     }
+    Main m = new Main();
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -31,66 +32,21 @@ public class Fill_Info extends javax.swing.JFrame {
 
         buttonGroup2 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         devicetype = new javax.swing.JTextField();
         name = new javax.swing.JTextField();
         mobilenumber = new javax.swing.JTextField();
         next = new javax.swing.JButton();
         jCheckBox1 = new javax.swing.JCheckBox();
         jCheckBox2 = new javax.swing.JCheckBox();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(153, 153, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel2.setBackground(new java.awt.Color(102, 102, 255));
-
-        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel1.setFont(new java.awt.Font("Serif", 1, 24)); // NOI18N
-        jLabel1.setText("Fill Infornation");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(157, 157, 157)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jLabel1)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 50));
-
-        jLabel2.setFont(new java.awt.Font("Franklin Gothic Book", 1, 24)); // NOI18N
-        jLabel2.setText("Name");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 100, 20));
-
-        jLabel3.setFont(new java.awt.Font("Franklin Gothic Book", 1, 24)); // NOI18N
-        jLabel3.setText("Mobile Number");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, -1));
-
-        jLabel4.setFont(new java.awt.Font("Franklin Gothic Book", 1, 24)); // NOI18N
-        jLabel4.setText("Gender");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, -1, -1));
-
-        jLabel6.setFont(new java.awt.Font("Franklin Gothic Book", 1, 24)); // NOI18N
-        jLabel6.setText("Device type");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, -1, -1));
-        jPanel1.add(devicetype, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 290, 150, 30));
-        jPanel1.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 150, 30));
-        jPanel1.add(mobilenumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 160, 150, 30));
+        jPanel1.add(devicetype, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 660, 220, 40));
+        jPanel1.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 470, 220, 40));
+        jPanel1.add(mobilenumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 560, 210, 40));
 
         next.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         next.setText("Next");
@@ -99,21 +55,34 @@ public class Fill_Info extends javax.swing.JFrame {
                 nextActionPerformed(evt);
             }
         });
-        jPanel1.add(next, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 360, 90, 40));
+        jPanel1.add(next, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 870, 90, 50));
 
         buttonGroup2.add(jCheckBox1);
-        jCheckBox1.setText("Male");
-        jPanel1.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, -1, -1));
+        jCheckBox1.setVerifyInputWhenFocusTarget(false);
+        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(617, 778, -1, -1));
 
         buttonGroup2.add(jCheckBox2);
-        jCheckBox2.setText("Female");
-        jPanel1.add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 220, -1, -1));
+        jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(459, 778, -1, -1));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/5.gif"))); // NOI18N
+        jLabel5.setText("jLabel5");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1080, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 497, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -127,6 +96,7 @@ public class Fill_Info extends javax.swing.JFrame {
         String Username = name.getText().toString();
         String mobile = mobilenumber.getText().toString();
         String device = devicetype.getText().toString();
+        m.fillInformation(Username, mobile, device);
 //        while (Username.isEmpty() && mobile.isEmpty() && device.isEmpty()) {
 //            if (Username.equals("")) {
 //                JOptionPane.showMessageDialog(null, "User name is Mandatory");
@@ -146,6 +116,15 @@ public class Fill_Info extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_nextActionPerformed
+
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+        m.gender("Male");
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
+
+    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
+        m.gender("Female");
+
+    }//GEN-LAST:event_jCheckBox2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -188,13 +167,8 @@ public class Fill_Info extends javax.swing.JFrame {
     public javax.swing.JTextField devicetype;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JLabel jLabel1;
-    public javax.swing.JLabel jLabel2;
-    public javax.swing.JLabel jLabel3;
-    public javax.swing.JLabel jLabel4;
-    public javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     public javax.swing.JTextField mobilenumber;
     public static javax.swing.JTextField name;
     public javax.swing.JButton next;

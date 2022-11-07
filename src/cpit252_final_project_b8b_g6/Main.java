@@ -5,8 +5,7 @@
  */
 package cpit252_final_project_b8b_g6;
 
-import java.util.Scanner;
-import java.util.UUID;
+import java.util.ArrayList;
 
 /**
  *
@@ -14,92 +13,91 @@ import java.util.UUID;
  */
 public class Main {
 
-    Scanner input = new Scanner(System.in);
     // for lines
-    Scanner input2 = new Scanner(System.in);
-    Customer c = new Customer();
+    static double pricetest;
+    int index = 0;
+    static ArrayList<String> info = new ArrayList<>();
 
     public static void main(String[] args) {
-        Main test = new Main();
-        System.out.println("choose service: \n1: maintenance\n2: Accessories\n");
-        test.chooseService(2, 100.0);
 
     }
 
-    public void chooseService(int service, double price) {
-        EnterDevice(input2.nextLine());
-        // if maintainance  show pictures of maintenance services
-        if (service == 1) {
-            System.out.println("Accessories menu");
-        }// if accories show pictures of accessories
-        else {
-            System.out.println("maintenance menu");
-        }
-        fillInformation();
-        String time = "time";
-        placeOrder(time, price);
-        showformation();
-
+    public void chooseService(String service) {
+        //c.setService(service);
+        info.add(index, service);
+        index++;
     }
 
-    public String EnterDevice(String DeviceType) {
-        System.out.println("Enter device information");
-        String DeviceInfo = input2.nextLine();
-        c.setDeviceInfo(DeviceType + ": " + DeviceInfo);
-        return DeviceType + ": " + DeviceInfo;
+    public void chooseServiceType(String service, double price) {
+        pricetest = price;
+        info.add(index, service);
+        index++;
     }
 
-    public void fillInformation() {
-        System.out.println("fill your information");
-        // random id 
-        String uniqueID = UUID.randomUUID().toString();
-        c.setId(uniqueID);
-        System.out.print("Enter your name: ");
-        String name = input2.nextLine();
-        System.out.println("");
-        c.setName(name);
-        //   char gender; // return the clicked button char
+    public void BrandDevice(String BrandDevice) {
+        info.add(index, BrandDevice);
+        index++;
+    }
 
-        System.out.print("Enter your number: ");
-        String phone = input.next();
-        c.setPhone(phone);
-        System.out.println(""); // test if it start with ....
+    public void fillInformation(String username, String mobile, String deviceType) {
+        info.add(index, username);
+        index++;
+        info.add(index, mobile);
+        index++;
+        info.add(index, deviceType);
+        index++;
+    }
 
+    public void gender(String gender) {
+        info.add(index, gender);
+        index++;
     }
 
     public void showformation() {
-        System.out.println("YOUR INFOOOOO");
-        System.out.println(c.toString());
         // test if it prints right
-
+        System.out.println("Total price is " + pricetest);
+        for (int i = 0; i < info.size(); i++) {
+            System.out.println(info.get(i) + " ");
+        }
     }
 
-    public void placeOrder(String time, double price) {
-        System.out.print("Enter location\n");
-        String location = input.next();
-        System.out.print("Enter Time\n");
-        String Duration = time; // test time ( Date within Range )
-        payment(price);
+    public void time(String time, String date) {
+        info.add(index, time);
+        index++;
+        info.add(index, date);
+        index++;
     }
 
-    public void payment(double price) {
+    public void location(String location) {
+        info.add(index, location);
+        index++;
+    }
+
+    public void payment(String discount) {
+        if (discount.equals("FCIT")) {
+            pricetest = pricetest - (pricetest * (15 / 100.0));
+        } else {
+            pricetest = pricetest;
+        }
+
         /* 
-        # of orders array size of 4
+        # of orders list size of 9
         Total Price ( accssorie + maintainance )
         Discout ? // FCIT Discount 15%
         check box to pay in cash or credit card
         when done show information and recipt
          */
-        System.out.println("Total price is " + price);
-        System.out.print("Enter discount:");
-        System.out.println("");
-        String discount = input.next();
-        // test the calculations of the discount
-        if (discount.equalsIgnoreCase("FCIT")) {
-            price = price - (price * (15 / 100.0));
-            System.out.println("The price after discount is " + price);
-        } else {
-            System.out.println("Invalid coupon");
-        }
+//        System.out.print("Enter discount:");
+//        System.out.println("");
+//        String discount = "";
+//        // test the calculations of the discount
+//        if(discount.equals("FCIT")){
+//            System.out.println("Total price is " + pricetest);
+//            pricetest = pricetest - (pricetest * (15/100.0));
+//            System.out.println("The price after discount is "+pricetest);
+//        }else{
+//            System.out.println("Total price is " + pricetest);
+//        }
+//        }
     }
 }
