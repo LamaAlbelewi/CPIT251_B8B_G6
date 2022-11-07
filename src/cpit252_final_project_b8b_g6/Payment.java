@@ -5,6 +5,8 @@
  */
 package cpit252_final_project_b8b_g6;
 
+import javax.swing.JLabel;
+
 /**
  *
  * @author ra52m
@@ -17,7 +19,7 @@ public class Payment extends javax.swing.JFrame {
     public Payment() {
         initComponents();
     }
-    Main m = new Main();
+    static Main m = new Main();
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -35,6 +37,8 @@ public class Payment extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -79,6 +83,12 @@ public class Payment extends javax.swing.JFrame {
         jLabel6.setText("jLabel6");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
+        jLabel1.setText("jLabel1");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 460, 130, 30));
+
+        jLabel2.setText("jLabel2");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 630, 130, 40));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -112,6 +122,7 @@ public class Payment extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
+
     /**
      * @param args the command line arguments
      */
@@ -138,9 +149,12 @@ public class Payment extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Payment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
+       // jLabel1.add(m.getPricetest());
+      //  m.payment();
+     //   jLabel1.setText(String.valueOf(m.getPricetest()));
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Payment().setVisible(true);
@@ -151,6 +165,8 @@ public class Payment extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
+    public static javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     public static javax.swing.JRadioButton jRadioButton1;

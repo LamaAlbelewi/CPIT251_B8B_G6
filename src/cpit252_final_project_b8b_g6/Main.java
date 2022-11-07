@@ -6,6 +6,7 @@
 package cpit252_final_project_b8b_g6;
 
 import java.util.ArrayList;
+import javax.swing.JLabel;
 
 /**
  *
@@ -55,7 +56,7 @@ public class Main {
 
     public void showformation() {
         // test if it prints right
-        System.out.println("Total price is " + pricetest);
+       // System.out.println("Total price is " + pricetest);
         for (int i = 0; i < info.size(); i++) {
             System.out.println(info.get(i) + " ");
         }
@@ -73,15 +74,24 @@ public class Main {
         index++;
     }
 
+    public static double getPricetest() {
+        return pricetest;
+    }
+
+    public static void setPricetest(double pricetest) {
+        Main.pricetest = pricetest;
+    }
+    
     public void payment(String discount) {
         if (discount.equals("FCIT")) {
             pricetest = pricetest - (pricetest * (15 / 100.0));
         } else {
             pricetest = pricetest;
         }
+      //  JLabel label1 = new JLabel("Test");
 
         /* 
-        # of orders list size of 9
+        # of orders list size of 9S
         Total Price ( accssorie + maintainance )
         Discout ? // FCIT Discount 15%
         check box to pay in cash or credit card
